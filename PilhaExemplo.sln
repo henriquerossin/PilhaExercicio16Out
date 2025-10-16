@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PilhaExemplo", "PilhaExemplo\PilhaExemplo.csproj", "{8793A1DB-1256-490F-A21E-C254B17656BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PihaExercicio", "PihaExercicio\PihaExercicio.csproj", "{7B2815CE-3210-47FC-BAC5-0F51983DA6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8793A1DB-1256-490F-A21E-C254B17656BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8793A1DB-1256-490F-A21E-C254B17656BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8793A1DB-1256-490F-A21E-C254B17656BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B2815CE-3210-47FC-BAC5-0F51983DA6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2815CE-3210-47FC-BAC5-0F51983DA6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2815CE-3210-47FC-BAC5-0F51983DA6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2815CE-3210-47FC-BAC5-0F51983DA6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
