@@ -49,7 +49,7 @@ namespace PilhaExemplo
         {
             if (head == null)
             {
-                Console.WriteLine("Fila vazia!");
+                Console.WriteLine("Pilha vazia!");
             }
             else
             {
@@ -61,6 +61,5 @@ namespace PilhaExemplo
                 }
             }
         }
-
     }
 }
