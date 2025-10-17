@@ -15,8 +15,6 @@ namespace PihaExercicio
         {
         }
 
-        public string[] vetor = new string[10];
-
         public void Empilhar(EditorTexto texto)
         {
             if (EstaVazia())
@@ -57,9 +55,9 @@ namespace PihaExercicio
                 return false;
         }
 
-        public bool EstaCheia()
+        public bool EstaCheia(int count)
         {
-            if (vetor[9] != null)
+            if (count > 9)
                 return true;
             else
                 return false;

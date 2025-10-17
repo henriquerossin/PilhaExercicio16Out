@@ -5,8 +5,7 @@
         static void Main(string[] args)
         {
             Pilha pilha = new Pilha();
-            string[] vetor = new string[10];
-            int opcao;
+            int opcao, count = 0;
 
             do
             {
@@ -20,9 +19,9 @@
                 switch (opcao)
                 {
                     case 1:
-                        if (pilha.EstaCheia())
+                        if (pilha.EstaCheia(count))
                         {
-                            Console.WriteLine("Historico cheio! Nao é possivel adicionar mais textos.");
+                            Console.WriteLine("Pilha cheia! Nao é possivel adicionar mais textos.");
                             Console.WriteLine();
                             break;
                         }
@@ -30,40 +29,24 @@
                         Console.WriteLine("Digite o texto: ");
                         string novoTexto = Console.ReadLine()!;
                         pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
-                        for (int i = 0; i < vetor.Length; i++)
-                        {
-                            if (vetor[i] == null)
-                            {
-                                vetor[i] = novoTexto;
-                                break;
-                            }
-                        }
-                        Console.WriteLine();
+                        count++;
                         break;
                     case 2:
                         if (pilha.head != null)
                         {
                             Console.WriteLine("Texto apagado: " + pilha.head.texto);
                             pilha.Desempilhar();
-                            for (int i = vetor.Length - 1; i >= 0; i--)
-                            {
-                                if (vetor[i] != null)
-                                {
-                                    vetor[i] = null;
-                                    break;
-                                }
-                            }
+                            count--;
                         }
                         else
                         {
-                            Console.WriteLine("Nada para apagar.");
+                            Console.WriteLine("Nada para apagar.\n");
                         }
-                        Console.WriteLine();
                         break;
                     case 3:
                         if (pilha.EstaVazia())
                         {
-                            Console.WriteLine("Historico vazio!");
+                            Console.WriteLine("Historico vazio!\n");
                         }
                         else
                         {
@@ -74,11 +57,9 @@
                                 aux = aux.Proximo;
                             }
                         }
-                        Console.WriteLine();
                         break;
                     case 4:
                         Console.WriteLine("Saindo...");
-                        Console.WriteLine();
                         break;
                 }
             } while (opcao != 4);
