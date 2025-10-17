@@ -4,8 +4,10 @@
     {
         static void Main(string[] args)
         {
+
+            EditorTexto editor = new EditorTexto();
             Pilha pilha = new Pilha();
-            int opcao, count = 0;
+            int opcao;
 
             do
             {
@@ -19,44 +21,13 @@
                 switch (opcao)
                 {
                     case 1:
-                        if (pilha.EstaCheia(count))
-                        {
-                            Console.WriteLine("Pilha cheia! Nao é possivel adicionar mais textos.");
-                            Console.WriteLine();
-                            break;
-                        }
-                        EditorTexto texto = new EditorTexto();
-                        Console.WriteLine("Digite o texto: ");
-                        string novoTexto = Console.ReadLine()!;
-                        pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
-                        count++;
+                        editor.Digitar(pilha);
                         break;
                     case 2:
-                        if (pilha.head != null)
-                        {
-                            Console.WriteLine("Texto apagado: " + pilha.head.texto);
-                            pilha.Desempilhar();
-                            count--;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Nada para apagar.\n");
-                        }
+                        editor.Desfazer(pilha);
                         break;
                     case 3:
-                        if (pilha.EstaVazia())
-                        {
-                            Console.WriteLine("Historico vazio!\n");
-                        }
-                        else
-                        {
-                            EditorTexto aux = pilha.head;
-                            while (aux != null)
-                            {
-                                Console.WriteLine(aux.ToString());
-                                aux = aux.Proximo;
-                            }
-                        }
+                        editor.MostrarHistorico(pilha);
                         break;
                     case 4:
                         Console.WriteLine("Saindo...");

@@ -10,6 +10,7 @@ namespace PihaExercicio
     internal class Pilha
     {
         public EditorTexto head { get; set; }
+        public int count { get; set; }
 
         public Pilha()
         {
@@ -26,6 +27,7 @@ namespace PihaExercicio
                 texto.Proximo = head;
                 head = texto;
             }
+            count++;
         }
 
         public EditorTexto Desempilhar()
@@ -38,8 +40,10 @@ namespace PihaExercicio
             {
                 EditorTexto aux = head;
                 head = head.Proximo;
+                count--;
                 return aux;
             }
+
         }
 
         public EditorTexto Topo()
@@ -57,7 +61,7 @@ namespace PihaExercicio
 
         public bool EstaCheia(int count)
         {
-            if (count > 9)
+            if (count == 10)
                 return true;
             else
                 return false;

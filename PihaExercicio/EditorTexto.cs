@@ -8,18 +8,27 @@ namespace PihaExercicio
 {
     internal class EditorTexto
     {
-
         Pilha pilha { get; set; }
 
         public Pilha historico { get; set; }
 
         public Pilha Digitar(Pilha pilha)
         {
-            Console.WriteLine("Digite o texto: ");
+
+            if (pilha.EstaCheia(pilha.count))
+            {
+                Console.WriteLine("Pilha cheia! Nao é possivel adicionar mais textos.");
+                Console.WriteLine();
+                return pilha;
+            }
+            else
+            {
+                Console.WriteLine("Digite o texto: ");
             string novoTexto = Console.ReadLine()!;
 
             pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
             return pilha;
+            }
         }
 
         public Pilha Desfazer(Pilha pilha)
