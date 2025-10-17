@@ -15,7 +15,7 @@ namespace PihaExercicio
         {
         }
 
-        string[] vetor = new string[10];
+        public string[] vetor = new string[10];
 
         public void Empilhar(EditorTexto texto)
         {

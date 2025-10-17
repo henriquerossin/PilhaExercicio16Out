@@ -8,6 +8,52 @@ namespace PihaExercicio
 {
     internal class EditorTexto
     {
+
+        Pilha pilha { get; set; }
+
+        public Pilha historico { get; set; }
+
+        public Pilha Digitar(Pilha pilha)
+        {
+            Console.WriteLine("Digite o texto: ");
+            string novoTexto = Console.ReadLine()!;
+
+            pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
+            return pilha;
+        }
+
+        public Pilha Desfazer(Pilha pilha)
+        {
+            if (pilha.head != null)
+            {
+                Console.WriteLine("Texto apagado: " + pilha.head.texto);
+                pilha.Desempilhar();
+            }
+            else
+            {
+                Console.WriteLine("Nada para apagar.");
+            }
+            return pilha;
+        }
+
+        public EditorTexto MostrarHistorico(Pilha pilha)
+        {
+            if (pilha.EstaVazia())
+            {
+                Console.WriteLine("Historico vazio!");
+            }
+            else
+            {
+                EditorTexto aux = pilha.head;
+                while (aux != null)
+                {
+                    Console.WriteLine(aux.ToString());
+                    aux = aux.Proximo;
+                }
+            }
+            return pilha.head;
+        }
+
         public EditorTexto()
         {
         }
