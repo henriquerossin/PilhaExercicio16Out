@@ -24,10 +24,10 @@ namespace PihaExercicio
             else
             {
                 Console.WriteLine("Digite o texto: ");
-            string novoTexto = Console.ReadLine()!;
+                string novoTexto = Console.ReadLine()!;
 
-            pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
-            historico.Empilhar(new EditorTexto(novoTexto, historico.head));
+                pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
+                historico.Empilhar(new EditorTexto(novoTexto, historico.head));
                 return pilha;
             }
         }
