@@ -12,7 +12,7 @@ namespace PihaExercicio
 
         public Pilha historico { get; set; }
 
-        public Pilha Digitar(Pilha pilha)
+        public Pilha Digitar(Pilha pilha, Pilha historico)
         {
 
             if (pilha.EstaCheia(pilha.count))
@@ -27,7 +27,8 @@ namespace PihaExercicio
             string novoTexto = Console.ReadLine()!;
 
             pilha.Empilhar(new EditorTexto(novoTexto, pilha.head));
-            return pilha;
+            historico.Empilhar(new EditorTexto(novoTexto, historico.head));
+                return pilha;
             }
         }
 
